@@ -6,8 +6,6 @@ A PyTorch project for **multi-label image classification** using CSV annotations
 
 ```text
 MULTI-LABEL_CLASSIFICATION/
-├── __pycache__/
-├── .venv/
 ├── dataset/
 │   ├── images/
 │   └── label_csv/
