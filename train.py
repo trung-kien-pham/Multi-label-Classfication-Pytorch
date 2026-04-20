@@ -332,7 +332,7 @@ if __name__ == "__main__":
         "--model_name",
         type=str,
         default="resnet18",
-        choices=["resnet18", "resnet50", "efficientnet_b0", "efficientnet_v2_s", "convnext_small", "swin_t"],
+        choices=["resnet18", "resnet50", "efficientnet_b0", "efficientnet_v2_s", "convnext_small", "swin_t", "mobilenet_v2", "mobilenet_v3_small", "mobilenet_v3_large"],
         help="The name of the torchvision model"
     )
     parser.add_argument("--num_classes", type=int, default=None, help="Total number of classes. If empty, it will be inferred")

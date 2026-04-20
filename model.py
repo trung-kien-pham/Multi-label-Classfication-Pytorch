@@ -39,6 +39,24 @@ def build_model(model_name: str, num_classes: int, pretrained: bool = True) -> n
         in_features = model.head.in_features
         model.head = nn.Linear(in_features, num_classes)
 
+    elif model_name == "mobilenet_v2":
+        weights = models.MobileNet_V2_Weights.DEFAULT if pretrained else None
+        model = models.mobilenet_v2(weights=weights)
+        in_features = model.classifier[1].in_features
+        model.classifier[1] = nn.Linear(in_features, num_classes)
+
+    elif model_name == "mobilenet_v3_small":
+        weights = models.MobileNet_V3_Small_Weights.DEFAULT if pretrained else None
+        model = models.mobilenet_v3_small(weights=weights)
+        in_features = model.classifier[3].in_features
+        model.classifier[3] = nn.Linear(in_features, num_classes)
+
+    elif model_name == "mobilenet_v3_large":
+        weights = models.MobileNet_V3_Large_Weights.DEFAULT if pretrained else None
+        model = models.mobilenet_v3_large(weights=weights)
+        in_features = model.classifier[3].in_features
+        model.classifier[3] = nn.Linear(in_features, num_classes)
+
     else:
         raise ValueError(f"Model not supported: {model_name}")
 
