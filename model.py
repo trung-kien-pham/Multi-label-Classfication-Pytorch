@@ -3,6 +3,7 @@ from torchvision import models
 
 
 def build_model(model_name: str, num_classes: int, pretrained: bool = True) -> nn.Module:
+    
     if model_name == "resnet18":
         weights = models.ResNet18_Weights.DEFAULT if pretrained else None
         model = models.resnet18(weights=weights)

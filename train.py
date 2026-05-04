@@ -8,6 +8,8 @@ import pandas as pd
 import torch.nn as nn
 from tqdm import tqdm
 from typing import Tuple
+from model import build_model
+from loss import BCEWithLogitsLoss
 from torchmetrics import MeanMetric
 from torch.utils.data import DataLoader
 from torchmetrics.classification import MultilabelF1Score
@@ -17,9 +19,6 @@ from data import (
     check_required_columns,
     build_transforms,
 )
-from loss import BCEWithLogitsLoss
-from model import build_model
-
 
 def set_seed(seed: int = 42):
     random.seed(seed)
@@ -348,3 +347,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     main(args)
+    
