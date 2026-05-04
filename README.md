@@ -19,7 +19,8 @@ MULTI-LABEL_CLASSIFICATION/
 ├── loss.py
 ├── model.py
 ├── predict.py
-└── train.py
+├── train.py
+└── valid.py
 ```
 
 ## Features
